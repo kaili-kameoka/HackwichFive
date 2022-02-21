@@ -24,13 +24,19 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buttonPressed(_ sender: Any) {
+        // Check that the curent index is within the range of the array.
         if (self.currentIndex < favoriteFoodsArra.count) {
+            // Change the bottom label to the text of the current element in the array
             self.bottomLabel.text = favoriteFoodsArra[currentIndex]
+            // change the button's label text to next
             self.buttonLabel.setTitle("next", for: UIControl.State.normal);
+            // Increment the current index
             currentIndex += 1;
             
         } else {
+            // Notify hte console tha the button is being disabled.
             print("button has been disabled");
+            // Disable the button.
             self.buttonLabel.isEnabled = false;
         }
     }
